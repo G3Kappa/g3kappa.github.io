@@ -1,12 +1,30 @@
+html
+{
+	width: 100%;
+	height: 100%;
+}
+
 body
 {
+	width: calc(80% - 370px);
+	height: calc(100% - 370px);
 	margin-left: 10%;
 	margin-right: 10%;
+
 }
 
 #motto
 {
+	white-space: nowrap;
 	color: #789922; //>Implying
+}
+
+#content
+{
+	width: 100%;
+	height: calc(100% + 370px / 2);
+	border-radius: 25px;
+	background-color: #4e4361;
 }
 
 #cutout, #hidden
@@ -17,7 +35,7 @@ body
 	position: absolute;
 	right: 0%;
 	bottom: 0%;
-	
+
 	visibility: hidden;
 
     background-repeat: no-repeat;

@@ -20,10 +20,14 @@
   </head>
   <body>
     <h1 class="page-header">Fieropa.com</h1>
-    <p class="lead" id="motto"></p>
+	<h3 class="lead" id="motto">&nbsp;</h3>
+    <div id="content">
 
+    </div>
+
+    <!-- Cutout of myself with random secrets behind it -->
     <div id="hidden"></div>
-    <div id="cutout"></div>
+    <div id="cutout" onclick="window.location = 'https://facebook.com/g3kappa';"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -35,28 +39,29 @@
     					'The frontpage of fierezza.', 'Broadcast fierezza.', '*Tips fiedora*', 'Serious Sam 4: The Final Encounter OFFICIAL TRAILER [HD]',
     					'Destroy the bee!', 'The Pyro... The Pyro...', 'Do a blowjob, and I\'ll be waiting!', 'Hey Diddy!',
     					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
-    					'You could\'ve called this site Bird vs Fiero, and no one could\'ve arguied with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
+    					'You could\'ve called this site Bird vs Fiero, and no one could\'ve argued with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
 
     	var g_secretBgs = ['s_waltjr03.png', 's_waltjr04.png', 's_waltjr05.png', 's_finalfantasy.png' ];
     	var g_curBg = 0;
 
-    	$('#motto').hide().text( '> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
+    	$('#motto').hide().html( '\> ' + g_mottos[ 16 ]).fadeIn(300); // Math.floor( Math.random() * g_mottos.length
     	//Handsome-guy animations
     	$('#cutout').css('visibility','visible').hide().fadeIn(300);
-    	$('#cutout').hover(
-		function(){
-		  $('#hidden').css('visibility','visible');
-		  //Randomize secret image
-		  $(this).animate({
-		     backgroundPositionY: '240px',
-		  }, 200).delay(500);
-		// This only fires if the row is not undergoing an animation when you mouseover it
-		},
-		function() {
-		  $(this).animate({
-		     backgroundPositionY: '0px',
-		  }, 1500, function() { $('#hidden').css('background-image', 'url(pics/' + g_secretBgs[ g_curBg++ % g_secretBgs.length ] + ')' ); } );
+
+    	$('#cutout').hover(function() {
+			$('#hidden').css('visibility','visible');
+			$(this).animate({
+				backgroundPositionY: '240px',
+			}, 200).delay(500);
+		}, function() {
+			$(this).animate({
+				backgroundPositionY: '0px',
+			}, 1500, function() { 
+				//Randomize secret image
+				$('#hidden').css('background-image', 'url(pics/' + g_secretBgs[ g_curBg++ % g_secretBgs.length ] + ')' ); 
+			});
 		});
+
     </script>
   </body>
 </html>
