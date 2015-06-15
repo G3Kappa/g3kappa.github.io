@@ -36,6 +36,10 @@
     					'Destroy the bee!', 'The Pyro... The Pyro...', 'Do a blowjob, and I\'ll be waiting!', 'Hey Diddy!',
     					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
     					'You could\'ve called this site Bird vs Fiero, and no one could\'ve arguied with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
+
+    	var g_secretBgs = ['s_waltjr03.png', 's_waltjr04.png', 's_waltjr05.png', 's_finalfantasy.png' ];
+    	var g_curBg = 0;
+
     	$('#motto').hide().text( '> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
     	//Handsome-guy animations
     	$('#cutout').css('visibility','visible').hide().fadeIn(300, function(){
@@ -43,6 +47,7 @@
     	});
     	$('#cutout').hover(
 		function(){
+		  //Randomize secret image
 		  $(this).animate({
 		     backgroundPositionY: '240px',
 		  }, 200).delay(1000);
@@ -51,7 +56,7 @@
 		function() {
 		  $(this).animate({
 		     backgroundPositionY: '0px',
-		  }, 1500);
+		  }, 1500, function() { $('#hidden').css('background-image', 'url(pics/' + g_secretBgs[ g_curBg++ % g_secretBgs.length ] + ')' ); } );
 		});
     </script>
   </body>
