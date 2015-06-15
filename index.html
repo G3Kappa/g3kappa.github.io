@@ -42,15 +42,14 @@
 
     	$('#motto').hide().text( '> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
     	//Handsome-guy animations
-    	$('#cutout').css('visibility','visible').hide().fadeIn(300, function(){
-    		$('#hidden').css('visibility','visible');
-    	});
+    	$('#cutout').css('visibility','visible').hide().fadeIn(300);
     	$('#cutout').hover(
 		function(){
+		  $('#hidden').css('visibility','visible');
 		  //Randomize secret image
 		  $(this).animate({
 		     backgroundPositionY: '240px',
-		  }, 200).delay(1000);
+		  }, 200).delay(500);
 		// This only fires if the row is not undergoing an animation when you mouseover it
 		},
 		function() {
