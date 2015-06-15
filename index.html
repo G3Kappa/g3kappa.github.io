@@ -25,15 +25,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Script fierissimi -->
     <script>
+    	//Motto generator
     	var g_mottos = ['Well, isn\' that fiero.', 'The land of the fiero.', 'That\'s very fiero!', 'Like "Europa", but more fiero.', 
     					'The frontpage of fierezza.', 'Broadcast fierezza.', '*Tips fiedora*', 'Serious Sam 4: The Final Encounter OFFICIAL TRAILER [HD]',
     					'Destroy the bee!', 'The Pyro... The Pyro...', 'Do a blowjob, and I\'ll be waiting!', 'Hey Diddy!',
-    					'The bonus stage is Gold...en', 'Ayyy lmao', '>Implying we\'ll update this website', 'The bougiest of websites.',
-    					'You could\'ve called this site Bird vs Fiero.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
+    					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
+    					'You could\'ve called this site Bird vs Fiero, and no one could\'ve arguied with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
+    	$('#motto').hide().text( '> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
 
-    	$('#motto').text( g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] );
     </script
   </body>
 </html>
