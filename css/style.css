@@ -1,3 +1,8 @@
+html
+{
+	cursor: url('../pics/cursor.png'), auto;
+}
+
 body
 {
 	margin-left: 10%;
