@@ -19,11 +19,14 @@ body
 
 #content
 {
+	color: #4e4361;
 	width: 100%;
 	height: calc(90% + 370px / 2);
 	border-radius: 4px;
 	background-color: #a091b9;
 	border: 1px solid #4e4361;
+	padding: 10px;
+	overflow: auto;
 }
 
 #cutout, #hidden
@@ -48,4 +51,9 @@ body
 #hidden
 {
 	background-image: url('../pics/s_finalfantasy.png');
+}
+
+li
+{
+	list-style-type: none;
 }
