@@ -14,16 +14,16 @@ body
 
 #motto
 {
-	white-space: nowrap;
 	color: #789922; //>Implying
 }
 
 #content
 {
 	width: 100%;
-	height: calc(100% + 370px / 2);
-	border-radius: 25px;
-	background-color: #4e4361;
+	height: calc(90% + 370px / 2);
+	border-radius: 4px;
+	background-color: #a091b9;
+	border: 1px solid #4e4361;
 }
 
 #cutout, #hidden

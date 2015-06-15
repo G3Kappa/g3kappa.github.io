@@ -19,8 +19,8 @@
     <![endif]-->
   </head>
   <body>
-    <h2 class="page-header" style="color: #4e4361;">Fieropa <span class="label" style="background-color: #4e4361; padding-bottom: 0px; margin-left: 0px">.com</span></h2>
-	<h3 class="lead" id="motto">&nbsp;</h3>
+    <h2 class="page-header" style="color: #4e4361;">Fieropa <span class="label" style="background-color: #4e4361; padding-bottom: 0px;">.com</span></h2>
+	<div class="lead alert alert-success" id="motto"><span>&nbsp;</span></div>
     <div id="content">
 
     </div>
@@ -39,12 +39,12 @@
     					'The frontpage of fierezza.', 'Broadcast fierezza.', '*Tips fiedora*', 'Serious Sam 4: The Final Encounter OFFICIAL TRAILER [HD]',
     					'Destroy the bee!', 'The Pyro... The Pyro...', 'Do a blowjob, and I\'ll be waiting!', 'Hey Diddy!',
     					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
-    					'You could\'ve called this site Bird vs Fiero, and no one could\'ve argued with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
+    					'You could\'ve called this site Bird vs Fiero.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
 
     	var g_secretBgs = ['s_waltjr03.png', 's_waltjr04.png', 's_waltjr05.png', 's_finalfantasy.png' ];
     	var g_curBg = 0;
 
-    	$('#motto').hide().html( '\> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
+    	$('#motto > span').hide().html( '\> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
     	//Handsome-guy animations
     	$('#cutout').css('visibility','visible').hide().fadeIn(300);
 
