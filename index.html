@@ -21,6 +21,10 @@
   <body>
     <h1 class="page-header">Fieropa.com</h1>
     <p class="lead" id="motto"></p>
+
+    <div id="hidden"></div>
+    <div id="cutout"></div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -33,7 +37,22 @@
     					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
     					'You could\'ve called this site Bird vs Fiero, and no one could\'ve arguied with you.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
     	$('#motto').hide().text( '> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
-
-    </script
+    	//Handsome-guy animations
+    	$('#cutout').css('visibility','visible').hide().fadeIn(300, function(){
+    		$('#hidden').css('visibility','visible');
+    	});
+    	$('#cutout').hover(
+		function(){
+		  $(this).animate({
+		     backgroundPositionY: '240px',
+		  }, 200).delay(1000);
+		// This only fires if the row is not undergoing an animation when you mouseover it
+		},
+		function() {
+		  $(this).animate({
+		     backgroundPositionY: '0px',
+		  }, 1500);
+		});
+    </script>
   </body>
 </html>

@@ -1,8 +1,3 @@
-html
-{
-	cursor: url('../pics/cursor.png'), auto;
-}
-
 body
 {
 	margin-left: 10%;
@@ -12,4 +7,28 @@ body
 #motto
 {
 	color: #789922; //>Implying
+}
+
+#cutout, #hidden
+{
+	width: 370px;
+	height: 370px;
+
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
+	
+	visibility: hidden;
+
+    background-repeat: no-repeat;
+}
+
+#cutout
+{
+	background-image: url('../pics/handsome_guy_eating_a_nugget.png');
+}
+
+#hidden
+{
+	background-image: url('../pics/secret.png');
 }
