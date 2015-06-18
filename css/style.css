@@ -6,8 +6,8 @@ html
 
 body
 {
-	width: calc(80% - 370px);
-	height: calc(100% - 370px);
+	width: calc(80% - 365px);
+	height: calc(100% - 400px);
 	margin-left: 10%;
 	margin-right: 10%;
 }
@@ -19,20 +19,20 @@ body
 
 #content
 {
-	color: #4e4361;
+	color: #698588;
 	width: 100%;
-	height: calc(90% + 370px / 2);
+	height: calc(90% + 400px / 2);
 	border-radius: 4px;
-	background-color: #a091b9;
-	border: 1px solid #4e4361;
+	background-color: #c3cfcf;
+	border: 1px solid #a6b8ba;
 	padding: 10px;
 	overflow: auto;
 }
 
-#cutout, #hidden
+#cutout
 {
-	width: 370px;
-	height: 370px;
+	width: 365px;
+	height: 400px;
 
 	position: absolute;
 	right: 0%;
@@ -41,19 +41,38 @@ body
 	visibility: hidden;
 
     background-repeat: no-repeat;
+
+	background-image: url('../pics/kurisu.png');
 }
 
-#cutout
+#githublogo
 {
-	background-image: url('../pics/handsome_guy_eating_a_nugget.png');
+	width: 120px;
+	height: 120px;
+
+	position: absolute;
+	right: 0%;
+	top: 0%;
+
+	visibility: hidden;
+
+    background-repeat: no-repeat;
+
+	background-image: url('../pics/github_kurisufied.png');
 }
 
-#hidden
+#githublogo:hover
 {
-	background-image: url('../pics/s_finalfantasy.png');
+	background-image: url('../pics/github_kurisufied_hover.png');
 }
 
 li
 {
 	list-style-type: none;
+}
+
+a
+{
+	text-decoration: none !important;
+	color: #8f513c;
 }

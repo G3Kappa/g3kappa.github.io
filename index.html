@@ -19,23 +19,22 @@
     <![endif]-->
   </head>
   <body>
-    <h2 class="page-header" style="color: #4e4361;">Fieropa <span class="label" style="background-color: #4e4361; padding-bottom: 0px;">.com</span></h2>
+    <a href="http://fieropa.com"><div><h2 class="page-header" style="color: #698588;">Fieropa <span class="label" style="background-color: #a6b8ba; padding-bottom: 0px;">.com</span></h2></div></a>
 	<div class="lead alert alert-success" id="motto"><span>&nbsp;</span></div>
     <div id="content">
     	<p class="lead">Projects I currently maintain:</p>
     	<li class="list-group">
-    		<a style="color: inherit; text-decoration: none;" href="https://chrome.google.com/webstore/detail/word-replacer/djakfbefalbkkdgnhkkdiihelkjdpbfh?hl=en">
+    		<a style="color: inherit;" href="https://chrome.google.com/webstore/detail/word-replacer/djakfbefalbkkdgnhkkdiihelkjdpbfh?hl=en">
     			<ul class="list-group-item" style="padding-bottom: 13px">
-	    			<b><h4 class="page-header" style="margin: 0px; margin-bottom: 5px;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Word Replacer (Chrome Extension)</h4></b>
-		    			<div style="font-size: 16px; text-align: justify;"><i>A simple extension inspired by the popular 'Cloud to Butt'. You can make your own list of replacements tailored to your tastes. See also</i> <a style="text-decoration: none;" href="https://xkcd.com/1288/">XKCD 1288</a>.</div>
+	    			<b><h4 class="page-header" style="margin: 0px; margin-bottom: 5px;"><span class="glyphicon glyphicon-search" aria-githublogo="true"></span> Word Replacer (Chrome Extension)</h4></b>
+		    			<div style="font-size: 16px; text-align: justify;"><i>A simple extension inspired by the popular 'Cloud to Butt'. You can make your own list of replacements tailored to your tastes. See also </i><a style="text-decoration: none;" href="https://xkcd.com/1288/">XKCD 1288</a>.</div>
     			</ul>
 			</a>
     	</li>
     </div>
 
-    <!-- Cutout of myself with random secrets behind it -->
-    <div id="hidden"></div>
-    <div id="cutout" onclick="window.location = 'https://facebook.com/g3kappa';"></div>
+    <a href="https://github.com/G3Kappa" id="githublogo"></a>
+    <div id="cutout"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -49,26 +48,17 @@
     					'The bonus stage is Gold...en', 'Ayyy lmao', 'Implying we\'ll update this website', 'The bougiest of websites.',
     					'You could\'ve called this site Bird vs Fiero.', 'You\'re Goddamn right.', 'Jesus Christ, Miskude.', 'Grey Face (no space)' ];
 
-    	var g_secretBgs = ['s_waltjr03.png', 's_waltjr04.png', 's_waltjr05.png', 's_finalfantasy.png' ];
-    	var g_curBg = 0;
 
     	$('#motto > span').hide().html( '\> ' + g_mottos[ Math.floor( Math.random() * g_mottos.length ) ] ).fadeIn(300);
-    	//Handsome-guy animations
-    	$('#cutout').css('visibility','visible').hide().fadeIn(300);
+    	$('#cutout, #githublogo').css('visibility','visible').hide().fadeIn(300);
 
-    	$('#cutout').hover(function() {
-			$('#hidden').css('visibility','visible');
-			$(this).animate({
-				backgroundPositionY: '240px',
-			}, 200).delay(500);
-		}, function() {
-			$(this).animate({
-				backgroundPositionY: '0px',
-			}, 1500, function() { 
-				//Randomize secret image
-				$('#hidden').css('background-image', 'url(pics/' + g_secretBgs[ g_curBg++ % g_secretBgs.length ] + ')' ); 
-			});
-		});
+		function preload(arrayOfImages) {
+		    $(arrayOfImages).each(function(){
+		        $('<img/>')[0].src = this;
+		    });
+		}
+
+		preload(['pics/github_kurisufied_hover.png']);
 
     </script>
   </body>
