@@ -6,8 +6,8 @@ html
 
 body
 {
-	width: calc(80% - 365px);
-	height: calc(100% - 400px);
+	width: 80%;
+	height: 60%;
 	margin-left: 10%;
 	margin-right: 10%;
 }
