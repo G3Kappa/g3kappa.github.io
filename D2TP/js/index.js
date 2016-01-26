@@ -133,7 +133,7 @@ function invalidatePicks() {
 		// Update the picked heroes
 		if(curr_team[i]) {
 			$('.picked-hero').eq(i)
-			.css('background-image', 'url("pics/heroes/' + curr_team[i] + '.jpg")');
+			.css('background-image', 'url("pics/heroes/' + curr_team[i].toLowerCase() + '.jpg")');
 		}
 		else {
 			$('.picked-hero').eq(i)
