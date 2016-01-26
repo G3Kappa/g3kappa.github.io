@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dota 2 Team Builder</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	</head>
+	<body>
+		<div id="picks-wrapper">
+			<div class="picked-hero"></div>
+			<div class="picked-hero"></div>
+			<div class="picked-hero"></div>
+			<div class="picked-hero"></div>
+			<div class="picked-hero"></div>
+		</div>
+
+		<div id="filter-wrapper">
+			<input type="text" id="roster-filter">
+
+			<form method="GET" style="display: inline-block">
+				<input type="hidden" name="h1" id="h1">
+				<input type="hidden" name="h2" id="h2">
+				<input type="hidden" name="h3" id="h3">
+				<input type="hidden" name="h4" id="h4">
+				<input type="hidden" name="h5" id="h5">
+				<input type="submit" value="Export" id="export-btn">
+			</form>
+		</div>
+
+		<div id="roster">
+		</div>
+
+		<script src="js/index.js"></script>
+	</body>
+</html>
