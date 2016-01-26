@@ -205,7 +205,7 @@ $('#export-btn').click(function() {
 // Crea dinamicamente il roster degli eroi
 for (hero of hero_list) {
 	$('#roster').append("<div class='roster-hero' data-hero-name='"+ hero + "' \
-	style='background-image: url(\"pics/heroes/" + hero + ".jpg\")'></div>");
+	style='background-image: url(\"pics/heroes/" + hero.toLowerCase() + ".jpg\")'></div>");
 }
 
 // Se son stati passati degli eroi via GET, pickali
