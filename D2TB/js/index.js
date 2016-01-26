@@ -111,7 +111,7 @@ var hero_list = [
 	"Wraith King",
 	"Zeus"
 ];
-var curr_team = [];
+var curr_team = [null, null, null, null, null];
 
 // Ottieni i parametri passati nell'URL via GET
 function parseURLParam(val) {
@@ -131,7 +131,7 @@ function parseURLParam(val) {
 function invalidatePicks() {
 	for (var i = 0; i < 5; ++i) {
 		// Update the picked heroes
-		if(curr_team[i]) {
+		if(curr_team[i] != null) {
 			$('.picked-hero').eq(i)
 			.css('background-image', 'url("pics/heroes/' + curr_team[i].toLowerCase() + '.jpg")');
 		}
@@ -149,6 +149,11 @@ function meepMerp() {
 	meep.play();
 }
 
+function selectSlot(idx) {
+	$('#selected-slot').removeAttr('id');
+	$('.picked-hero').eq(idx).attr('id', 'selected-slot');
+}
+
 // Events-----------------------------------------------------------------------
 // Evidenzia solo gli eroi matchati dal filtro
 $('#roster-filter').keyup(function() {
@@ -162,36 +167,30 @@ $('#roster-filter').keyup(function() {
 	});
 });
 
-// Rimuovi la pick selezionata
+// Seleziona lo slot attuale
 $('.picked-hero').click(function() {
-	var idx = hero_list.indexOf(curr_team[$(this).index()]);
-	// Togli l'effetto applicato agli eroi pickati
-	$('.roster-hero').eq(idx).removeClass('roster-hero-picked');
-	// Togli l'eroe dal team
-	curr_team.splice($(this).index(), 1);
-
-	invalidatePicks();
+	selectSlot($(this).index());
 });
 
-// Effettua una pick o usa mouse2 per de-pickare un eroe
+// Effettua una pick
 $(document).on('click', '.roster-hero', function(e) {
-	var i = curr_team.length;
-	if(i == 5) {
+	if($(this).hasClass('roster-hero-picked')) {
 		meepMerp();
 		return;
 	}
 
-	curr_team[i] = $(this).attr('data-hero-name');
-	var len = curr_team.length;
-	// Impedisci di pickare due volte lo stesso eroe
-	curr_team = $.unique(curr_team);
-	if(len != curr_team.length) {
-		meepMerp();
-	}
-
-	// Applica uno stile visivo all'eroe pickato
+	// Rimuovi .roster-hero-picked dall'eroe in questo slot
+	var slot_idx = $('#selected-slot').index();
+	// curr_team[slot_idx]
+	$('.roster-hero-picked').filter(function() {
+		return $(this).attr('data-hero-name') == curr_team[slot_idx];
+	}).removeClass('roster-hero-picked');
+	// Aggiungi l'eroe attuale al team ed aggiungi la classe
+	curr_team[slot_idx] = $(this).attr('data-hero-name');
 	$(this).addClass('roster-hero-picked');
+
 	invalidatePicks();
+	selectSlot(++slot_idx % 5);
 });
 
 // Esporta il team
@@ -213,6 +212,6 @@ for(var i = 1; i <= 5; ++i) {
 	var hero = decodeURIComponent(parseURLParam('h' + i));
 	var idx = hero_list.indexOf(hero);
 	if(idx == -1) continue;
-
+	selectSlot(i - 1);
 	$('.roster-hero').eq(idx).trigger('click');
 }

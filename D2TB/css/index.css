@@ -14,6 +14,10 @@ body {
 	margin-bottom: 20px;
 }
 
+#selected-slot {
+	box-shadow: 0 0 15px white;
+}
+
 .picked-hero {
 	width: 126px;
 	height: 70px;
@@ -35,6 +39,9 @@ body {
 	width: 900px;
 	margin: auto;
 	background-color: #242F39;
+	border-bottom: 10px solid #1c252d;
+	padding: 5px;
+	margin-bottom: 15px;
 }
 
 .roster-hero {
@@ -54,7 +61,7 @@ body {
 
 .roster-hero:hover:not(.roster-hero-picked){
 	border: 1px solid white;
-	box-shadow: 0 0 15px rgba(255,255,255,1);
+	box-shadow: 0 0 15px white;
 }
 
 .roster-hero-picked {
@@ -62,6 +69,12 @@ body {
 	border: 1px solid white;
 }
 
-.roster-hero-filtered {
-	opacity: 0.3;
+.roster-hero-filtered:not(.roster-hero-picked) {
+	-webkit-filter: brightness(20%);
+	-moz-filter: brightness(20%);
+	filter: brightness(20%);
+}
+
+#footer {
+	text-align: center;
 }
